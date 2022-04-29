@@ -13,24 +13,11 @@ class ClientsController < ApplicationController
     render json: client
   end
 
-  # POST /clients
-  def create
-    new_client = Client.create!(client_params)
-    render json: new_client, status: :created
-  end
-
   # UPDATE /clients/:id
   def update
     client = find_client
     client.update!(client_params)
     render json: client
-  end
-
-  # DELETE /clients/:id
-  def destroy
-    client = find_client
-    client.destroy
-    render json: {}
   end
 
   private

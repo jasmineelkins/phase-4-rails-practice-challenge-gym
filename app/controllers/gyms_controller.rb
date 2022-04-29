@@ -14,12 +14,6 @@ class GymsController < ApplicationController
     render json: gym
   end
 
-  # POST /gyms
-  def create
-    new_gym = Gym.create!(gym_params)
-    render json: new_gym, status: :created
-  end
-
   # UPDATE /gyms/:id
   def update
     gym = find_gym
